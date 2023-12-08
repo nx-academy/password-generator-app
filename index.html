@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <main>
-      <h1>Password Generator</h1>
-      <p class="password-result"></p>
-      <form action="" class="form">
-        <div class="form-group">
-          <label for="password-length">Character Length</label>
-          <input
-            type="number"
-            min="0"
-            max="20"
-            id="password-length"
-            name="password-length"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password-uppercase">include uppercase letters</label>
-          <input
-            type="checkbox"
-            id="password-uppercase"
-            name="password-uppercase"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password-lowercase">include lowercase letters</label>
-          <input
-            type="checkbox"
-            id="password-lowercase"
-            name="password-lowercase"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password-numbers">include numbers</label>
-          <input
-            type="checkbox"
-            id="password-numbers"
-            name="password-numbers"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password-symbols">include symbols</label>
-          <input
-            type="checkbox"
-            id="password-symbols"
-            name="password-symbols"
-          />
-        </div>
-        <div class="submit-wrapper">
-            <button type="submit">Generate</button>
-        </div>
-      </form>
-    </main>
-  </body>
-  <script src="dist/main.js" type="module"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <main>
+            <h1>Password Generator</h1>
+            <p class="password-result"></p>
+            <form action="" class="form">
+                <div class="form-group">
+                    <label for="password-length">Character Length</label>
+                    <input
+                        type="number"
+                        min="0"
+                        max="20"
+                        id="password-length"
+                        name="password-length"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password-uppercase"
+                        >include uppercase letters</label
+                    >
+                    <input
+                        type="checkbox"
+                        id="password-uppercase"
+                        name="password-uppercase"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password-lowercase"
+                        >include lowercase letters</label
+                    >
+                    <input
+                        type="checkbox"
+                        id="password-lowercase"
+                        name="password-lowercase"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password-numbers">include numbers</label>
+                    <input
+                        type="checkbox"
+                        id="password-numbers"
+                        name="password-numbers"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password-symbols">include symbols</label>
+                    <input
+                        type="checkbox"
+                        id="password-symbols"
+                        name="password-symbols"
+                    />
+                </div>
+                <div class="submit-wrapper">
+                    <button type="submit">Generate</button>
+                </div>
+            </form>
+        </main>
+    </body>
+    <script src="dist/main.js" type="module"></script>
 </html>

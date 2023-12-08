@@ -2,20 +2,32 @@ import { generatePassword } from "./functions/generatePassword.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
-    const passwordUppercaseInput = document.querySelector("#password-uppercase") as HTMLInputElement
-    const passwordLowercaseInput = document.querySelector("#password-lowercase") as HTMLInputElement
-    const passwordNumbersInput = document.querySelector("#password-numbers") as HTMLInputElement
+    const passwordUppercaseInput = document.querySelector(
+        "#password-uppercase"
+    ) as HTMLInputElement;
+    const passwordLowercaseInput = document.querySelector(
+        "#password-lowercase"
+    ) as HTMLInputElement;
+    const passwordNumbersInput = document.querySelector(
+        "#password-numbers"
+    ) as HTMLInputElement;
+    const passwordSymbolsInput = document.querySelector(
+        "#password-symbols"
+    ) as HTMLInputElement;
 
-    if (form && passwordUppercaseInput) {
+    if (
+        form &&
+        passwordUppercaseInput &&
+        passwordLowercaseInput &&
+        passwordNumbersInput &&
+        passwordSymbolsInput
+    ) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            console.log(passwordUppercaseInput.checked)
-            console.log(passwordLowercaseInput.checked)
-            console.log(passwordNumbersInput.checked)
-
-            const password = generatePassword(10, true, false);
-
+            const password = generatePassword(20, true, true, true);
+            
+            console.log(password);
         });
     }
 };
