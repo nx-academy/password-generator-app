@@ -1,4 +1,4 @@
-import { generatePassword } from './functions/generatePassword.js'
+import { generatePassword } from "./functions/generatePassword.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
@@ -7,8 +7,8 @@ const handleGenerate = () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
             //console.log("test submit");
-    
-            generatePassword(3);
+
+            generatePassword(10, true);
         });
     }
 };
