@@ -4,26 +4,26 @@ import { generatePassword } from "./generatePassword";
 
 describe("generatePassword Unit Test Suites", () => {
     it("should be return something", () => {
-        expect(generatePassword(3, true)).toBeDefined();
+        expect(generatePassword(3, true, false)).toBeDefined();
     });
 
     it("should be return a string", () => {
-        expect(typeof generatePassword(3, true)).toBe("string");
+        expect(typeof generatePassword(3, true, false)).toBe("string");
     });
 
     it("should be return a string with 5 characters", () => {
-        expect(generatePassword(5, true).length).toEqual(5);
+        expect(generatePassword(5, true, false).length).toEqual(5);
     });
 
     it("should be return a string only in lowercase", () => {
-        const password = generatePassword(10, false);
+        const password = generatePassword(10, false, false);
         const re = /^[a-z]+$/;
 
         expect(re.test(password)).toBe(true);
     });
 
     it("should be return a string with lowercase and uppercase", () => {
-        const password = generatePassword(10, true);
+        const password = generatePassword(10, true, false);
         const re = /^[a-zA-Z]+$/;
 
         expect(re.test(password)).toBe(true);
