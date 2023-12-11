@@ -3,7 +3,6 @@ export const displayRangeValue = ():void => {
     const rangeValue = document.querySelector(
         "input[type='range']",
     ) as HTMLInputElement;
-    console.log(rangeValue);
 
     if (value && rangeValue) value.innerHTML = rangeValue.value;
 };

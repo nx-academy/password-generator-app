@@ -43,12 +43,14 @@ const handleGenerate = () => {
             );
 
             displayPassword.innerHTML = password;
+        });
 
-            if (password === "")
-                displayPassword.innerHTML =
-                    "You must checked at least one input!";
+        form.addEventListener("submit", () => {
+            const password = document.querySelector(
+                ".password-result",
+            ) as HTMLInputElement;
 
-            passwordStrength(password);
+            passwordStrength(password.outerText);
         });
 
         form.addEventListener("change", () => {
