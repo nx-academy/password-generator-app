@@ -15,3 +15,29 @@
         @apply flex h-screen items-center justify-center bg-balticSeaDarker;
     }
 }
+
+@layer components {
+    .form {
+        @apply mt-5 bg-balticSea p-5;
+    }
+
+    .form-group label {
+        @apply text-body capitalize leading-body text-mischka;
+    }
+
+    .form-group {
+        @apply mb-3;
+    }
+
+    .strength {
+        @apply mr-2 h-7 w-3 self-center border-2 border-mischka;
+    }
+
+    input[type="checkbox"] {
+        @apply accent-mintGreen;
+    }
+
+    .tooweak  {
+        @apply border-carnation bg-carnation;
+    }
+}

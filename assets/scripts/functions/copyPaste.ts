@@ -12,13 +12,14 @@ export const copyPaste = (): void => {
             navigator.clipboard.writeText(password.outerText);
 
             messageCopied.innerText = "Copied!";
+            btnCopyPaste.classList.remove("text-mischka");
+            btnCopyPaste.classList.add("text-mintGreen");
 
-            const timeout = setTimeout(() => {
+            setTimeout(() => {
                 messageCopied.innerText = "";
+                btnCopyPaste.classList.remove("text-mintGreen");
+                btnCopyPaste.classList.add("text-mischka");
             }, 3000);
-            timeout;
-
-            clearTimeout(timeout);
         });
     }
 };

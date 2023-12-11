@@ -1,8 +1,9 @@
 export const passwordStrength = (password: string): void => {
     const messageStrength = document.querySelector(
-        ".message-strength"
+        ".message-strength",
     ) as HTMLElement;
     const form = document.querySelector(".form");
+    const strengthShape = document.querySelector(".strength") as HTMLElement;
 
     if (form && messageStrength) {
         form.addEventListener("submit", () => {
@@ -16,6 +17,8 @@ export const passwordStrength = (password: string): void => {
                 case 0:
                 case 1:
                     messageStrength.innerText = "TOO WEAK!";
+                    strengthShape.className = "strength tooweak";
+
                     break;
                 case 2:
                     messageStrength.innerText = "WEAK";

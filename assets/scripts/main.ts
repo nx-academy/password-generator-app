@@ -1,6 +1,7 @@
 import { generatePassword } from "./functions/generatePassword.js";
 import { copyPaste } from "./functions/copyPaste.js";
 import { passwordStrength } from "./functions/passwordStrength.js";
+import { displayRangeValue } from "./functions/displayRangeValue.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
@@ -48,6 +49,10 @@ const handleGenerate = () => {
                     "You must checked at least one input!";
 
             passwordStrength(password);
+        });
+
+        form.addEventListener("change", () => {
+            displayRangeValue();
         });
     }
 
