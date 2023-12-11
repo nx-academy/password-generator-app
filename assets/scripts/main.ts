@@ -1,5 +1,6 @@
 import { generatePassword } from "./functions/generatePassword.js";
-import { copyPaste } from "./functions/copyPaste.js"
+import { copyPaste } from "./functions/copyPaste.js";
+import { passwordStrength } from "./functions/passwordStrength.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
@@ -32,6 +33,8 @@ const handleGenerate = () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
+            console.log(passwordLowercaseInput.checked)
+
             const password = generatePassword(
                 Number(passwordLenght.value),
                 passwordUppercaseInput.checked,
@@ -39,15 +42,19 @@ const handleGenerate = () => {
                 passwordNumbersInput.checked,
                 passwordSymbolsInput.checked
             );
+            console.log(password);
+            
 
             displayPassword.innerHTML = password;
             if (password === "")
                 displayPassword.innerHTML =
                     "You must checked at least one input!";
+            
+            passwordStrength(password)
         });
     }
 
-    copyPaste()
+    copyPaste();
 };
 
 handleGenerate();

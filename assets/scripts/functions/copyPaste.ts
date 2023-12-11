@@ -1,4 +1,4 @@
-export const copyPaste = () => {
+export const copyPaste = ():void => {
     const btnCopyPaste = document.querySelector(".btnCopyPaste");
     const messageCopied = document.querySelector(
         ".copied-message"
