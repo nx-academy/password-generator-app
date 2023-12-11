@@ -1,6 +1,7 @@
 export const generatePassword = (
     length: number,
     hasUpperCase: boolean,
+    hasLowerCase: boolean,
     hasNumber: boolean,
     hasSymbols: boolean
 ): string => {
@@ -9,19 +10,15 @@ export const generatePassword = (
     const NUMBERS = "123456789";
     const SYMBOLS = ".*?[#?!@$%^&*-]";
 
-    let letters = LETTERS_LOWERCASE;
+    let letters = "";
 
-    if (hasUpperCase) {
-        letters += LETTERS_UPPERCASE;
-    }
+    if (hasUpperCase) letters += LETTERS_UPPERCASE;
 
-    if (hasNumber) {
-        letters += NUMBERS;
-    }
+    if(hasLowerCase) letters += LETTERS_LOWERCASE;
 
-    if (hasSymbols) {
-        letters += SYMBOLS;
-    }
+    if (hasNumber) letters += NUMBERS;
+
+    if (hasSymbols) letters += SYMBOLS;
 
     const charactersLength = letters.length;
 

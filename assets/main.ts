@@ -2,6 +2,9 @@ import { generatePassword } from "./functions/generatePassword.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
+    const passwordLenght = document.querySelector(
+        "#password-length"
+    ) as HTMLInputElement;
     const passwordUppercaseInput = document.querySelector(
         "#password-uppercase"
     ) as HTMLInputElement;
@@ -14,20 +17,32 @@ const handleGenerate = () => {
     const passwordSymbolsInput = document.querySelector(
         "#password-symbols"
     ) as HTMLInputElement;
+    const displayPassword = document.querySelector(".password-result");
 
     if (
         form &&
+        passwordLenght &&
         passwordUppercaseInput &&
         passwordLowercaseInput &&
         passwordNumbersInput &&
-        passwordSymbolsInput
+        passwordSymbolsInput &&
+        displayPassword
     ) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const password = generatePassword(20, true, true, true);
-            
-            console.log(password);
+            const password = generatePassword(
+                Number(passwordLenght.value),
+                passwordUppercaseInput.checked,
+                passwordLowercaseInput.checked,
+                passwordNumbersInput.checked,
+                passwordSymbolsInput.checked
+            );
+
+            displayPassword.innerHTML = password;
+            if (password === "")
+                displayPassword.innerHTML =
+                    "You must checked at least one input!";
         });
     }
 };
