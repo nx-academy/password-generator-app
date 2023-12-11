@@ -21,6 +21,7 @@ const handleGenerate = () => {
         "#password-symbols",
     ) as HTMLInputElement;
     const displayPassword = document.querySelector(".password-result");
+    const checkboxes = document.querySelectorAll("input[type='checkbox]")
 
     if (
         form &&
@@ -33,6 +34,8 @@ const handleGenerate = () => {
     ) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
+
+            //if(Array.from(checkboxes).every(test => test.checked === false))
 
             const password = generatePassword(
                 Number(passwordLenght.value),

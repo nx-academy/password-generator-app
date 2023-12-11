@@ -3,7 +3,7 @@ export const passwordStrength = (password: string): void => {
         ".message-strength",
     ) as HTMLElement;
 
-    const strengthShape = document.querySelector(".strength") as HTMLElement;
+    const strengthShape = document.querySelector(".wrapper") as HTMLElement;
 
     let strength = 0;
     if (password.match(/[a-z]+/)) strength += 1;
@@ -15,17 +15,31 @@ export const passwordStrength = (password: string): void => {
         case 0:
         case 1:
             messageStrength.innerText = "TOO WEAK!";
-            strengthShape.className = "strength tooweak";
-
+            strengthShape.classList.remove("weak");
+            strengthShape.classList.remove("medium");
+            strengthShape.classList.remove("strong");
+            strengthShape.classList.add("tooweak");
             break;
         case 2:
             messageStrength.innerText = "WEAK";
+            strengthShape.classList.remove("tooweak");
+            strengthShape.classList.remove("medium");
+            strengthShape.classList.remove("strong");
+            strengthShape.classList.add("weak");
             break;
         case 3:
             messageStrength.innerText = "MEDIUM";
+            strengthShape.classList.remove("weak");
+            strengthShape.classList.remove("tooweak");
+            strengthShape.classList.remove("strong");
+            strengthShape.classList.add("medium");
             break;
         case 4:
             messageStrength.innerText = "STRONG";
+            strengthShape.classList.remove("weak");
+            strengthShape.classList.remove("medium");
+            strengthShape.classList.remove("tooweak");
+            strengthShape.classList.add("strong");
             break;
         default:
             messageStrength.innerText = "";

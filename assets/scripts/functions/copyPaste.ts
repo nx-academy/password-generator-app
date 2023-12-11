@@ -1,4 +1,4 @@
-export const copyPaste = (): void => {
+export const copyPaste = ():void => {
     const btnCopyPaste = document.querySelector(".btnCopyPaste");
     const messageCopied = document.querySelector(
         ".copied-message",
@@ -8,8 +8,8 @@ export const copyPaste = (): void => {
     ) as HTMLInputElement;
 
     if (btnCopyPaste && password) {
-        btnCopyPaste.addEventListener("click", () => {
-            navigator.clipboard.writeText(password.outerText);
+        btnCopyPaste.addEventListener("click", async () => {
+            await navigator.clipboard.writeText(password.outerText);
 
             messageCopied.innerText = "Copied!";
             btnCopyPaste.classList.remove("text-mischka");

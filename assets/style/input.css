@@ -37,7 +37,19 @@
         @apply accent-mintGreen;
     }
 
-    .tooweak  {
+    .wrapper.tooweak .rectangle-wrapper > div:first-child {
         @apply border-carnation bg-carnation;
+    }
+
+    .wrapper.weak .rectangle-wrapper > div:is(:first-child, :nth-child(2)) {
+        @apply border-coral bg-coral;
+    }
+
+    .wrapper.medium .rectangle-wrapper > div:not(:last-child) {
+        @apply border-creamCan bg-creamCan;
+    }
+
+    .wrapper.strong .rectangle-wrapper > div {
+        @apply border-mintGreen bg-mintGreen;
     }
 }
