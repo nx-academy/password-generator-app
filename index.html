@@ -1,21 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Password Generator</title>
+        <link rel="stylesheet" href="dist/style/output.css" />
     </head>
     <body>
         <main>
-            <h1>Password Generator</h1>
-            <div>
-                <p class="password-result"></p>
-                <div>
-                    <span class="copied-message"></span>
+            <h1 class="text-center text-headingM text-topaz mb-5">
+                Password Generator
+            </h1>
+            <div class="flex justify-between bg-balticSea">
+                <p
+                    class="password-result self-center p-4 text-headingL text-mischka"
+                >
+                    P4$5W0rD!
+                </p>
+                <div class="flex">
+                    <span
+                        class="copied-message self-center text-body uppercase text-mintGreen"
+                    ></span>
                     <img
                         src="assets/img/copypasteicon.svg"
                         alt="Copy-Paste feature"
-                        class="btnCopyPaste"
+                        class="btnCopyPaste h-[24px] w-[21px] self-center text-mintGreen"
                     />
                 </div>
             </div>
@@ -32,40 +41,40 @@
                     />
                 </div>
                 <div class="form-group">
-                    <label for="password-uppercase"
-                        >include uppercase letters</label
-                    >
                     <input
                         type="checkbox"
                         id="password-uppercase"
                         name="password-uppercase"
                     />
+                    <label for="password-uppercase"
+                        >include uppercase letters</label
+                    >
                 </div>
                 <div class="form-group">
-                    <label for="password-lowercase"
-                        >include lowercase letters</label
-                    >
                     <input
                         type="checkbox"
                         id="password-lowercase"
                         name="password-lowercase"
                     />
+                    <label for="password-lowercase"
+                        >include lowercase letters</label
+                    >
                 </div>
                 <div class="form-group">
-                    <label for="password-numbers">include numbers</label>
                     <input
                         type="checkbox"
                         id="password-numbers"
                         name="password-numbers"
                     />
+                    <label for="password-numbers">include numbers</label>
                 </div>
                 <div class="form-group">
-                    <label for="password-symbols">include symbols</label>
                     <input
                         type="checkbox"
                         id="password-symbols"
                         name="password-symbols"
                     />
+                    <label for="password-symbols">include symbols</label>
                 </div>
 
                 <div class="strength-wrapper">

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: jetbrainMono;
+    src: url(../../assets/font/JetBrains_Mono/static/JetBrainsMono-Regular.ttf);
+}
+
+@layer base {
+    html {
+        @apply font-sans;
+    }
+    body {
+        @apply flex h-screen items-center justify-center bg-balticSeaDarker;
+    }
+}

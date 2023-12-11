@@ -1,10 +1,10 @@
-export const copyPaste = ():void => {
+export const copyPaste = (): void => {
     const btnCopyPaste = document.querySelector(".btnCopyPaste");
     const messageCopied = document.querySelector(
-        ".copied-message"
+        ".copied-message",
     ) as HTMLElement;
     const password = document.querySelector(
-        ".password-result"
+        ".password-result",
     ) as HTMLInputElement;
 
     if (btnCopyPaste && password) {
@@ -13,9 +13,12 @@ export const copyPaste = ():void => {
 
             messageCopied.innerText = "Copied!";
 
-            setTimeout(() => {
+            const timeout = setTimeout(() => {
                 messageCopied.innerText = "";
             }, 3000);
+            timeout;
+
+            clearTimeout(timeout);
         });
     }
 };
