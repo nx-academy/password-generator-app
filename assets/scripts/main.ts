@@ -21,7 +21,9 @@ const handleGenerate = () => {
         "#password-symbols",
     ) as HTMLInputElement;
     const displayPassword = document.querySelector(".password-result");
-    const checkboxes = document.querySelectorAll("input[type='checkbox]")
+    const checkboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll(
+        "input[type='checkbox']",
+    );
 
     if (
         form &&
@@ -30,12 +32,11 @@ const handleGenerate = () => {
         passwordLowercaseInput &&
         passwordNumbersInput &&
         passwordSymbolsInput &&
-        displayPassword
+        displayPassword //&&
+        //Array.from(checkboxes).every((box) => box.checked === false)
     ) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-
-            //if(Array.from(checkboxes).every(test => test.checked === false))
 
             const password = generatePassword(
                 Number(passwordLenght.value),
