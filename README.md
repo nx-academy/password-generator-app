@@ -9,7 +9,7 @@ Application for generating a random password containing lowercase and uppercase 
 </p>
 
 <p align="center">
-    <img src="assets/img/readme.png" alt="readme" width="70%">
+    <img src="assets/img/readme.png" alt="readme" width="80%">
 </p>
 
 When the password is generated, the form returns the password strength based on the elements present, as well as the password length.
