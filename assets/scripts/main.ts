@@ -1,4 +1,5 @@
 import { generatePassword } from "./functions/generatePassword.js";
+import { copyPaste } from "./functions/copyPaste.js"
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
@@ -45,6 +46,8 @@ const handleGenerate = () => {
                     "You must checked at least one input!";
         });
     }
+
+    copyPaste()
 };
 
 handleGenerate();

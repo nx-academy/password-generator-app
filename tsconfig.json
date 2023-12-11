@@ -6,6 +6,12 @@
         "strict": true,
         "noImplicitAny": true
     },
-    "include": ["./assets/main.ts", "./assets/functions/generatePassword.ts"],
-    "exclude": ["node_modules", "./assets/functions/generatePassword.spec.ts"]
+    "include": [
+        "assets/scripts/main.ts",
+        "assets/scripts/functions/generatePassword.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "assets/scripts/functions/generatePassword.spec.ts"
+    ]
 }
