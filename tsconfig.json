@@ -12,6 +12,6 @@
     ],
     "exclude": [
         "node_modules",
-        "assets/scripts/functions/generatePassword.spec.ts"
+        "assets/scripts/functions/*.spec.ts"
     ]
 }

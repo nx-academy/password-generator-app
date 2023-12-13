@@ -2,6 +2,7 @@ import { generatePassword } from "./functions/generatePassword.js";
 import { copyPaste } from "./functions/copyPaste.js";
 import { passwordStrength } from "./functions/passwordStrength.js";
 import { displayRangeValue } from "./functions/displayRangeValue.js";
+import { scoringStrength } from "./functions/scoringStrength.js";
 
 const handleGenerate = () => {
     const form = document.querySelector(".form");
@@ -21,9 +22,6 @@ const handleGenerate = () => {
         "#password-symbols",
     ) as HTMLInputElement;
     const displayPassword = document.querySelector(".password-result");
-    const checkboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll(
-        "input[type='checkbox']",
-    );
 
     if (
         form &&
@@ -32,8 +30,7 @@ const handleGenerate = () => {
         passwordLowercaseInput &&
         passwordNumbersInput &&
         passwordSymbolsInput &&
-        displayPassword //&&
-        //Array.from(checkboxes).every((box) => box.checked === false)
+        displayPassword
     ) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -46,15 +43,11 @@ const handleGenerate = () => {
                 passwordSymbolsInput.checked,
             );
 
-            displayPassword.innerHTML = password;
-        });
-
-        form.addEventListener("submit", () => {
-            const password = document.querySelector(
-                ".password-result",
-            ) as HTMLInputElement;
-
-            passwordStrength(password.outerText);
+            if (password) {
+                displayPassword.innerHTML = password;
+                const score = scoringStrength(password);
+                passwordStrength(score);
+            }
         });
 
         form.addEventListener("change", () => {
